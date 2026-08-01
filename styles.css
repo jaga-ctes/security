@@ -1,0 +1,184 @@
+/* ============================================================
+   JAGĀ SECURITY — landing
+   Estética: informe confidencial. Papel, tipografía de máquina
+   de escribir, barras de redacción, sello rojo. Sin build step,
+   sin dependencias externas.
+    Desarrollado por Jagā Digital Design — https://jaga-ctes.github.io/digital-design/    
+   ============================================================ */
+
+:root {
+  --paper: #f5f3ee;
+  --paper-dim: #ebe8df;
+  --ink: #1c2d42;
+  --ink-muted: #5c6672;
+  --line: rgba(28,45,66,0.16);
+  --line-strong: rgba(28,45,66,0.5);
+
+  /* Severidad — el mismo lenguaje que usa un informe de pentest real */
+  --critical: #c81e3a;   --critical-bg: #fbe4e8;
+  --high:     #b5480a;   --high-bg:     #fbe6d8;
+  --medium:   #92720a;   --medium-bg:   #f7edcf;
+  --low:      #1d5d8a;   --low-bg:      #dcecf5;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px;
+}
+
+* , *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  /* textura de papel muy sutil */
+  background-image:
+    radial-gradient(rgba(22,23,28,0.035) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+h1, h2, h3 { font-family: var(--font-mono); font-weight: 700; line-height: 1.15; margin: 0 0 var(--space-3); letter-spacing: -0.01em; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--ink); }
+img { display: block; max-width: 100%; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.skip-link{
+  position:absolute; left:-999px; top:0; background:var(--ink); color:var(--paper);
+  padding:.75em 1.2em; z-index:999;
+}
+.skip-link:focus{ left:0; }
+:focus-visible { outline: 2px solid var(--critical); outline-offset: 2px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: clamp(20px,5vw,32px); padding-right: clamp(20px,5vw,32px); }
+.hr { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+/* ============================================================
+   Eyebrow "ANEXO" — el hilo conductor de la página como informe
+   ============================================================ */
+.exhibit {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.8rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted);
+  margin: 0 0 var(--space-2);
+}
+.exhibit b { color: var(--ink); }
+
+/* ============================================================
+   Botones
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-mono); font-weight: 600; font-size: 0.9rem;
+  letter-spacing: 0.02em; text-decoration: none; cursor: pointer;
+  padding: 13px 24px; border: 2px solid var(--ink); border-radius: 2px;
+  background: transparent; color: var(--ink); transition: background .15s ease, color .15s ease;
+}
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: #000; }
+.btn-outline:hover { background: var(--ink); color: var(--paper); }
+.btn-block { width: 100%; }
+
+/* ============================================================
+   Chips de severidad
+   ============================================================ */
+.tag {
+  display: inline-flex; align-items: center; font-family: var(--font-mono);
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+  padding: 3px 9px; border-radius: 2px;
+}
+.tag-critical { background: var(--critical-bg); color: var(--critical); }
+.tag-high     { background: var(--high-bg);     color: var(--high); }
+.tag-medium   { background: var(--medium-bg);   color: var(--medium); }
+.tag-low      { background: var(--low-bg);      color: var(--low); }
+
+/* ============================================================
+   Barra de redacción — el motivo visual central del hero
+   ============================================================ */
+.redact {
+  display: inline-block; background: var(--ink); color: transparent;
+  border-radius: 1px; user-select: none; vertical-align: middle;
+}
+
+/* ============================================================
+   Panel de informe (hero)
+   ============================================================ */
+.report-panel {
+  position: relative; background: #fff; border: 1px solid var(--line-strong);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.report-panel__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 18px; border-bottom: 1px dashed var(--line-strong);
+  font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--ink-muted);
+}
+.report-panel__row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 11px 18px; font-size: 0.92rem; border-top: 1px solid var(--line);
+}
+.report-panel__foot {
+  padding: 12px 18px; border-top: 1px solid var(--line-strong);
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.03em; color: var(--ink-muted);
+}
+.report-stamp {
+  position: absolute; top: -14px; right: 18px;
+  border: 3px solid var(--critical); color: var(--critical);
+  font-family: var(--font-mono); font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.14em; padding: 6px 12px; border-radius: 3px;
+  transform: rotate(4deg); background: var(--paper);
+}
+
+/* ============================================================
+   Cards de servicio
+   ============================================================ */
+.card {
+  background: #fff; border: 1px solid var(--line-strong); padding: 30px 26px;
+  display: flex; flex-direction: column; height: 100%;
+}
+.card__kicker { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin: 0 0 6px; }
+.card__title { font-size: 1.3rem; margin: 0 0 10px; }
+.card__price { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-muted); margin: 0 0 14px; }
+.card__list { margin: 6px 0 22px; flex: 1; }
+.card__list li { position: relative; padding-left: 18px; margin-bottom: 9px; font-size: 0.92rem; }
+.card__list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; background: var(--ink); }
+
+/* ============================================================
+   Metodología
+   ============================================================ */
+.method-step {
+  display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline;
+  padding: 22px 0; border-top: 1px solid var(--line);
+}
+.method-step:first-child { border-top: none; }
+.method-step__num { flex: 0 0 48px; font-family: var(--font-mono); font-weight: 700; font-size: 0.95rem; color: var(--critical); }
+.method-step__title { flex: 1 1 200px; font-size: 1.1rem; margin: 0; }
+.method-step__desc { flex: 2 1 280px; font-size: 0.92rem; color: var(--ink-muted); margin: 0; }
+
+/* ============================================================
+   Navegación — menú mobile
+   ============================================================ */
+#nav-links { display: flex; align-items: center; gap: var(--space-6); }
+.nav-toggle { display: none; }
+
+@media (max-width: 900px) {
+  #nav-links { display: none; }
+  #nav-links.is-open {
+    display: flex; flex-direction: column; align-items: stretch;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--paper); border-bottom: 2px solid var(--line-strong);
+    padding: var(--space-4) clamp(20px,5vw,32px) var(--space-6); gap: var(--space-4);
+  }
+  #nav-links.is-open .btn { width: 100%; }
+  .nav-toggle { display: inline-flex; }
+}
+
+/* ============================================================
+   Formulario de contacto
+   ============================================================ */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); }
+.input, select.input, textarea.input {
+  width: 100%; font: inherit; font-family: var(--font-body); font-size: 0.95rem;
+  padding: 11px 13px; background: #fff; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink);
+}
+.input:focus-visible { outline-offset: 0; border-color: var(--ink); }
+textarea.input { resize: vertical; min-height: 100px; }

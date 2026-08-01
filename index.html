@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagā Security — Pentesting y Auditorías de Seguridad Ofensiva en Corrientes</title>
+<meta name="description" content="Pentesting real sobre tu aplicación web, API o infraestructura. Explotación efectiva, no solo un escaneo — informe con severidad CVSS y remediación. Corrientes Capital.">
+<link rel="canonical" href="https://jaga-ctes.github.io/security/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jagā Security">
+<meta property="og:title" content="Jagā Security — Pentesting y Auditorías de Seguridad Ofensiva">
+<meta property="og:description" content="Explotación real, no solo un escaneo. Informe con severidad CVSS y remediación. Corrientes Capital.">
+<meta property="og:url" content="https://jaga-ctes.github.io/security/">
+<meta property="og:locale" content="es_AR">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jagā Security — Pentesting y Auditorías de Seguridad Ofensiva">
+<meta name="twitter:description" content="Explotación real, no solo un escaneo. Informe con severidad CVSS y remediación. Corrientes Capital.">
+
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f5f3ee">
+
+<link rel="icon" type="image/png" href="img/jaga-security-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- JSON-LD: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Jagā Security",
+  "url": "https://jaga-ctes.github.io/security/",
+  "telephone": "+5493794870266",
+  "email": "jaga.corrientes@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Corrientes",
+    "addressRegion": "Corrientes",
+    "addressCountry": "AR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -27.4780009, "longitude": -58.8132239 },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -27.4780009, "longitude": -58.8132239 },
+    "geoRadius": "10000"
+  },
+  "priceRange": "$$$",
+  "description": "Pentesting y auditorías de seguridad ofensiva sobre aplicaciones web, APIs e infraestructura, para empresas y PyMEs en Corrientes Capital."
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+<header style="position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line-strong);">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px clamp(20px,5vw,32px);">
+    <a href="#inicio" aria-label="Jagā Security — inicio" style="display:flex; align-items:center;">
+      <img src="img/jaga-security-logo.png" alt="Jagā Security" style="height:42px; width:auto;">
+    </a>
+
+    <nav id="nav-links" aria-label="Navegación principal">
+      <a href="#servicios" style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.04em; text-decoration:none; color:var(--ink);">SERVICIOS</a>
+      <a href="#metodologia" style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.04em; text-decoration:none; color:var(--ink);">METODOLOGÍA</a>
+      <a href="#porque" style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.04em; text-decoration:none; color:var(--ink);">POR QUÉ</a>
+      <a href="#contacto" style="font-family:var(--font-mono); font-size:0.85rem; letter-spacing:0.04em; text-decoration:none; color:var(--ink);">CONTACTO</a>
+      <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20un%20pentest" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 18px; font-size:0.8rem;">SOLICITAR DIAGNÓSTICO</a>
+    </nav>
+
+    <button class="btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú" style="padding:9px 14px; font-size:0.8rem;">[ MENÚ ]</button>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <!-- ================= HERO ================= -->
+  <section style="padding:clamp(56px,9vw,110px) 0 clamp(48px,7vw,88px);">
+    <div class="wrap" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:56px; align-items:center;">
+      <div>
+        <p class="exhibit">§ EVALUACIÓN DE SEGURIDAD OFENSIVA</p>
+        <h1 style="font-size:clamp(2rem,4.4vw,2.9rem); margin:0 0 22px; max-width:18ch;">Verificamos la seguridad real de tus aplicaciones, sitios web, redes y sistemas.</h1>
+        <p style="font-size:1.05rem; color:var(--ink-muted); max-width:48ch; margin:0 0 30px;">Pentesting real, con explotación efectiva — no solo un escaneo automatizado. Informe con severidad y pasos concretos para cerrar cada hallazgo.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px;">
+          <a href="#contacto" class="btn btn-primary">SOLICITAR DIAGNÓSTICO</a>
+          <a href="#metodologia" class="btn btn-outline">VER METODOLOGÍA</a>
+        </div>
+      </div>
+
+      <div class="report-panel">
+        <span class="report-stamp">CONFIDENCIAL</span>
+        <div class="report-panel__head">
+          <span>INFORME_PENTEST.PDF</span>
+          <span>PÁG. 04</span>
+        </div>
+        <div class="report-panel__row">
+          <span>Autenticación <span class="redact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+          <span class="tag tag-critical">CRITICAL</span>
+        </div>
+        <div class="report-panel__row">
+          <span>Panel de administración expuesto</span>
+          <span class="tag tag-high">HIGH</span>
+        </div>
+        <div class="report-panel__row">
+          <span>Cabeceras de seguridad ausentes</span>
+          <span class="tag tag-medium">MEDIUM</span>
+        </div>
+        <div class="report-panel__row">
+          <span>Certificado TLS configurado</span>
+          <span class="tag tag-low">LOW</span>
+        </div>
+        <div class="report-panel__foot">4 HALLAZGOS · ALCANCE: APLICACIÓN WEB · CVSS v3.1</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <!-- ================= SERVICIOS ================= -->
+  <section id="servicios" class="wrap" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,32px);">
+    <p class="exhibit">ANEXO <b>A</b> — SERVICIOS</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); max-width:26ch; margin:0 0 14px;">Cubrimos toda tu superficie de ataque</h2>
+    <p style="font-size:1rem; color:var(--ink-muted); max-width:56ch; margin:0 0 40px;">Cada pentest se cotiza según el alcance real.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; align-items:stretch;">
+      <div class="card">
+        <p class="card__kicker">Servicio 01</p>
+        <h3 class="card__title">Diagnóstico de Exposición</h3>
+        <p class="card__price">Cotización según alcance</p>
+        <p style="font-size:0.92rem; color:var(--ink-muted); margin:0 0 6px;">Reconocimiento y escaneo de lo que es visible desde afuera de tu empresa. Un informe ejecutivo de tu superficie de ataque real.</p>
+        <ul class="card__list">
+          <li>Reconocimiento de dominios, subdominios y servicios expuestos</li>
+          <li>Detección de configuraciones y versiones vulnerables</li>
+          <li>Informe ejecutivo priorizado por severidad</li>
+        </ul>
+        <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20el%20Diagn%C3%B3stico%20de%20Exposici%C3%B3n" target="_blank" rel="noopener" class="btn btn-outline btn-block">Consultar alcance</a>
+      </div>
+
+      <div class="card">
+        <p class="card__kicker">Servicio 02</p>
+        <h3 class="card__title">Pentest de Aplicaciones Web y APIs</h3>
+        <p class="card__price">Cotización según alcance</p>
+        <p style="font-size:0.92rem; color:var(--ink-muted); margin:0 0 6px;">Testing ofensivo real sobre tu sitio web, aplicación o API, con explotación efectiva.</p>
+        <ul class="card__list">
+          <li>Explotación real, no solo escaneo automatizado</li>
+          <li>Cobertura OWASP Top 10 / API Top 10</li>
+          <li>Informe técnico con PoC, severidad CVSS y remediación</li>
+        </ul>
+        <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20el%20Pentest%20de%20Aplicaciones%20Web" target="_blank" rel="noopener" class="btn btn-outline btn-block">Consultar alcance</a>
+      </div>
+
+      <div class="card">
+        <p class="card__kicker">Servicio 03</p>
+        <h3 class="card__title">Pentest de Aplicaciones Móviles</h3>
+        <p class="card__price">Cotización según alcance</p>
+        <p style="font-size:0.92rem; color:var(--ink-muted); margin:0 0 6px;">Testing ofensivo sobre apps Android e iOS: desde el almacenamiento local hasta la comunicación con el backend.</p>
+        <ul class="card__list">
+          <li>Análisis estático y dinámico del APK / IPA</li>
+          <li>Seguridad de las APIs que consume la app</li>
+          <li>Cobertura OWASP MASVS</li>
+        </ul>
+        <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20el%20Pentest%20de%20Aplicaciones%20M%C3%B3viles" target="_blank" rel="noopener" class="btn btn-outline btn-block">Consultar alcance</a>
+      </div>
+
+      <div class="card">
+        <p class="card__kicker">Servicio 04</p>
+        <h3 class="card__title">Auditoría de Redes e Infraestructura</h3>
+        <p class="card__price">Cotización según alcance</p>
+        <p style="font-size:0.92rem; color:var(--ink-muted); margin:0 0 6px;">Evaluación de la red interna, servidores y dispositivos conectados, con explotación real de lo que encontramos.</p>
+        <ul class="card__list">
+          <li>Mapeo de dispositivos, puertos y servicios activos</li>
+          <li>Explotación de configuraciones y credenciales débiles</li>
+          <li>Segmentación de red y movimiento lateral</li>
+        </ul>
+        <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20la%20Auditor%C3%ADa%20de%20Redes%20e%20Infraestructura" target="_blank" rel="noopener" class="btn btn-outline btn-block">Consultar alcance</a>
+      </div>
+
+      <div class="card">
+        <p class="card__kicker">Servicio 05</p>
+        <h3 class="card__title">Seguridad en la Nube</h3>
+        <p class="card__price">Cotización según alcance</p>
+        <p style="font-size:0.92rem; color:var(--ink-muted); margin:0 0 6px;">Revisión de la configuración y los permisos de tu infraestructura en AWS, Azure o GCP.</p>
+        <ul class="card__list">
+          <li>Configuraciones expuestas y permisos excesivos (IAM)</li>
+          <li>Buckets, bases de datos y servicios mal configurados</li>
+          <li>Rutas de escalamiento de privilegios en la nube</li>
+        </ul>
+        <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20Seguridad%20en%20la%20Nube" target="_blank" rel="noopener" class="btn btn-outline btn-block">Consultar alcance</a>
+      </div>
+
+      <div class="card">
+        <p class="card__kicker">Servicio 06</p>
+        <h3 class="card__title">Programa Continuo</h3>
+        <p class="card__price">Cotización mensual</p>
+        <p style="font-size:0.92rem; color:var(--ink-muted); margin:0 0 6px;">Para el cliente que ya hizo su pentest inicial y quiere mantenerse cubierto con el tiempo.</p>
+        <ul class="card__list">
+          <li>Retesting periódico de los hallazgos corregidos</li>
+          <li>Ventana de respuesta prioritaria ante incidentes</li>
+          <li>Seguimiento del historial de severidad</li>
+        </ul>
+        <a href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20el%20Programa%20Continuo" target="_blank" rel="noopener" class="btn btn-outline btn-block">Consultar alcance</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <!-- ================= METODOLOGÍA ================= -->
+  <section id="metodologia" style="background:var(--paper-dim); border-top:1px solid var(--line-strong); border-bottom:1px solid var(--line-strong);">
+    <div class="wrap" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,32px);">
+      <p class="exhibit">ANEXO <b>B</b> — METODOLOGÍA</p>
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); max-width:20ch; margin:0 0 14px;">Cinco fases, sin atajos</h2>
+      <p style="font-size:1rem; color:var(--ink-muted); max-width:56ch; margin:0 0 36px;">Todo pentest sigue el mismo proceso estructurado, dentro del alcance que acordamos por escrito.</p>
+
+      <div>
+        <div class="method-step">
+          <p class="method-step__num">01</p>
+          <h3 class="method-step__title">Reconocimiento</h3>
+          <p class="method-step__desc">Mapeo de dominios, servicios y superficie expuesta, sin tocar nada todavía.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-step__num">02</p>
+          <h3 class="method-step__title">Enumeración</h3>
+          <p class="method-step__desc">Identificación de tecnologías, versiones y puntos de entrada posibles.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-step__num">03</p>
+          <h3 class="method-step__title">Explotación</h3>
+          <p class="method-step__desc">Intentos reales de vulnerar lo encontrado, dentro del alcance acordado.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-step__num">04</p>
+          <h3 class="method-step__title">Validación de impacto</h3>
+          <p class="method-step__desc">Confirmamos qué se podría hacer con cada hallazgo si fuera un atacante real.</p>
+        </div>
+        <div class="method-step">
+          <p class="method-step__num">05</p>
+          <h3 class="method-step__title">Informe y remediación</h3>
+          <p class="method-step__desc">Entrega del reporte con severidad CVSS, evidencia y pasos concretos para cerrar cada brecha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POR QUÉ ================= -->
+  <section id="porque" class="wrap" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,32px);">
+    <p class="exhibit">ANEXO <b>C</b> — POR QUÉ JAGĀ SECURITY</p>
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); max-width:24ch; margin:0 0 40px;">Un pentest que sirve, no una lista de checkboxes</h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2px; background:var(--line-strong); border:1px solid var(--line-strong);">
+      <div style="background:var(--paper); padding:28px 26px;">
+        <p class="card__kicker">01</p>
+        <h3 style="font-size:1.05rem; margin:0 0 8px;">Explotación real, no solo un scanner</h3>
+        <p style="font-size:0.88rem; color:var(--ink-muted); margin:0;">Un escaneo automatizado te dice qué podría estar mal. Nosotros confirmamos qué se puede explotar de verdad.</p>
+      </div>
+      <div style="background:var(--paper); padding:28px 26px;">
+        <p class="card__kicker">02</p>
+        <h3 style="font-size:1.05rem; margin:0 0 8px;">Alcance y confidencialidad por escrito</h3>
+        <p style="font-size:0.88rem; color:var(--ink-muted); margin:0;">Definimos juntos qué se testea y bajo qué condiciones, antes de tocar nada.</p>
+      </div>
+      <div style="background:var(--paper); padding:28px 26px;">
+        <p class="card__kicker">03</p>
+        <h3 style="font-size:1.05rem; margin:0 0 8px;">Severidad documentada, no una lista suelta</h3>
+        <p style="font-size:0.88rem; color:var(--ink-muted); margin:0;">Cada hallazgo con CVSS, evidencia y pasos de remediación priorizados.</p>
+      </div>
+      <div style="background:var(--paper); padding:28px 26px;">
+        <p class="card__kicker">04</p>
+        <h3 style="font-size:1.05rem; margin:0 0 8px;">Metodología alineada a estándares reconocidos</h3>
+        <p style="font-size:0.88rem; color:var(--ink-muted); margin:0;">Trabajamos sobre marcos como OWASP, MITRE ATT&amp;CK e ISO 27001 — no un proceso improvisado para cada cliente.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <!-- ================= CONTACTO ================= -->
+  <section id="contacto" class="wrap" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,32px);">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:56px;">
+      <div>
+        <p class="exhibit">ANEXO <b>D</b> — CONTACTO</p>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); margin:0 0 20px;">Solicitá tu evaluación de seguridad</h2>
+        <p style="font-size:0.98rem; line-height:1.7; color:var(--ink-muted); margin:0 0 26px; max-width:420px;">Contanos qué querés evaluar y coordinamos los próximos pasos. Todo bajo confidencialidad.</p>
+        <div style="display:flex; flex-direction:column; gap:12px; font-family:var(--font-mono); font-size:0.92rem;">
+          <a href="https://wa.me/5493794870266" target="_blank" rel="noopener" style="text-decoration:none; color:var(--ink);">WHATSAPP: +54 9 379 487-0266</a>
+          <a href="mailto:jaga.corrientes@gmail.com" style="text-decoration:none; color:var(--ink);">MAIL: jaga.corrientes@gmail.com</a>
+        </div>
+        <p style="font-size:0.8rem; color:var(--ink-muted); margin:26px 0 0; padding-top:18px; border-top:1px dashed var(--line-strong);">Toda evaluación se realiza bajo acuerdo de confidencialidad y alcance definido por escrito.</p>
+      </div>
+
+      <form action="mailto:jaga.corrientes@gmail.com" method="post" enctype="text/plain" style="display:flex; flex-direction:column; gap:18px;">
+        <div class="field">
+          <label for="f-nombre">Nombre / Empresa</label>
+          <input class="input" id="f-nombre" type="text" name="Nombre" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input class="input" id="f-email" type="email" name="Email" required>
+        </div>
+        <div class="field">
+          <label for="f-tipo">Tipo de proyecto</label>
+          <select class="input" id="f-tipo" name="Tipo de proyecto">
+            <option>Aplicación web</option>
+            <option>API</option>
+            <option>Infraestructura / red</option>
+            <option>No estoy seguro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-mensaje">Alcance / mensaje</label>
+          <textarea class="input" id="f-mensaje" name="Mensaje" required rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">ENVIAR CONSULTA</button>
+      </form>
+    </div>
+  </section>
+
+  <hr class="hr">
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="padding:40px clamp(20px,5vw,32px) 24px;">
+    <div class="wrap" style="padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:28px;">
+      <div>
+        <a href="#inicio" style="display:inline-block;">
+          <img src="img/jaga-security-logo.png" alt="Jagā Security" style="height:36px; width:auto;">
+        </a>
+        <p style="font-size:0.85rem; color:var(--ink-muted); margin:14px 0 0;">Seguridad ofensiva para empresas en Corrientes.</p>
+      </div>
+      <nav style="display:flex; flex-direction:column; gap:8px; font-family:var(--font-mono); font-size:0.82rem;">
+        <a href="#servicios" style="text-decoration:none; color:var(--ink);">SERVICIOS</a>
+        <a href="#metodologia" style="text-decoration:none; color:var(--ink);">METODOLOGÍA</a>
+        <a href="#porque" style="text-decoration:none; color:var(--ink);">POR QUÉ</a>
+        <a href="#contacto" style="text-decoration:none; color:var(--ink);">CONTACTO</a>
+      </nav>
+      <div style="display:flex; flex-direction:column; gap:8px; font-family:var(--font-mono); font-size:0.82rem;">
+        <a href="https://jaga-ctes.github.io/mantenimiento-it/" target="_blank" rel="noopener" style="text-decoration:none; color:var(--ink-muted);">JAGĀ MANTENIMIENTO IT ↗</a>
+        <a href="https://jaga-ctes.github.io/digital-design/" target="_blank" rel="noopener" style="text-decoration:none; color:var(--ink-muted);">JAGĀ DIGITAL DESIGN ↗</a>
+      </div>
+    </div>
+    <div class="wrap" style="padding-left:0; padding-right:0; margin-top:24px; padding-top:16px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-muted);">
+      <span>© 2026 JAGĀ SECURITY — CORRIENTES, ARGENTINA</span>
+      <span>SISTEMA EN LÍNEA</span>
+    </div>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
