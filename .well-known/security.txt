@@ -1,0 +1,4 @@
+Contact: mailto:contacto@jagasoluciones.com
+Expires: 2027-09-06T00:00:00Z
+Preferred-Languages: es, en
+Canonical: https://security.jagasoluciones.com/.well-known/security.txt

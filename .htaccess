@@ -1,0 +1,43 @@
+# ============================================================================
+# .htaccess de un sitio Jagā  (copiar a la raíz del repo con el nombre `.htaccess`)
+# Reemplazar SOLO estas dos cosas (en las 3 líneas de abajo y nada más):
+#   {{HOST}}        → host de la marca, p. ej.  mantenimiento.jagasoluciones.com
+#   {{HOST_REGEX}}  → el mismo con los puntos escapados, p. ej.  mantenimiento\.jagasoluciones\.com
+# El hub (jagasoluciones.com) usa el mismo archivo; ahí además redirige www → raíz.
+#
+# Hostinger corre LiteSpeed, que entiende estas directivas de Apache. Si alguna cabecera NO sale, el comando
+#   python3 ~/jaga/tools/jaga_deploy.py check-live <repo>
+# lo dice con un FAIL (H01–H06) y hay que resolverlo con el soporte de Hostinger o desde hPanel antes de dar el sitio por publicado.
+# La CSP de abajo tiene que ser IGUAL a la del <meta> de index.html (salvo frame-ancestors).
+# ============================================================================
+
+DirectoryIndex index.html
+Options -Indexes
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+# --- 1) HTTPS siempre y un único host canónico (sin loops: el host está fijo, no se copia del pedido) -----------
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/\.well-known/(acme-challenge|pki-validation)/
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^security\.jagasoluciones\.com$ [NC]
+RewriteRule ^ https://security.jagasoluciones.com%{REQUEST_URI} [L,R=301]
+
+# --- 2) Cabeceras de seguridad ---------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # HSTS: empezar con 300 s (5 min). Si todo anda por HTTPS durante una semana: 86400 y después 31536000.
+  # Sin includeSubDomains y SIN preload (son difíciles de deshacer; se decide a propósito más adelante).
+  Header always set Strict-Transport-Security "max-age=300"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "no-referrer"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set X-Frame-Options "DENY"
+  Header always set Content-Security-Policy "default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; frame-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+</IfModule>
+
+# --- 3) Nunca servir archivos ocultos ni restos de trabajo (/.well-known/ sí: security.txt) ------------------------
+<IfModule mod_authz_core.c>
+  <FilesMatch "(^\.|\.(bak|old|orig|swp|sql|log|ini|sh|py|md)$|~$)">
+    Require all denied
+  </FilesMatch>
+</IfModule>
