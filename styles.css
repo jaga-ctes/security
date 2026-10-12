@@ -98,8 +98,8 @@
 
   /* Severidad — el mismo lenguaje que usa un informe de pentest real */
   --critical: #c81e3a;   --critical-bg: #fbe4e8;
-  --high:     #b5480a;   --high-bg:     #fbe6d8;
-  --medium:   #92720a;   --medium-bg:   #f7edcf;
+  --high:     #a8420a;   --high-bg:     #fbe6d8;
+  --medium:   #7a5f08;   --medium-bg:   #f7edcf;
   --low:      #1d5d8a;   --low-bg:      #dcecf5;
 
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
@@ -138,11 +138,6 @@ a { color: var(--ink); }
 img { display: block; max-width: 100%; }
 ul { margin: 0; padding: 0; list-style: none; }
 
-.skip-link{
-  position:absolute; left:-999px; top:0; background:var(--ink); color:var(--paper);
-  padding:.75em 1.2em; z-index:999;
-}
-.skip-link:focus{ left:0; }
 :focus-visible { outline: 2px solid var(--critical); outline-offset: 2px; }
 
 .wrap { max-width: 1120px; margin: 0 auto; padding-left: clamp(20px,5vw,32px); padding-right: clamp(20px,5vw,32px); }
@@ -206,6 +201,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 14px 18px; border-bottom: 1px dashed var(--line-strong);
   font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--ink-muted);
 }
+.report-panel__note {
+  margin: 0; padding: 12px 190px 12px 18px; background: var(--paper-dim);
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+}
+@media (max-width: 520px) { .report-panel__note { padding: 30px 18px 12px; } }
 .report-panel__row {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 11px 18px; font-size: 0.92rem; border-top: 1px solid var(--line);
@@ -269,8 +271,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ============================================================
    Formulario de contacto (redactor de mensaje)
    ============================================================ */
-.field { display: flex; flex-direction: column; gap: 6px; }
-.field label, .jaga-field label { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); }
+.jaga-field label { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); }
 .input, input.input, select.input, textarea.input {
   width: 100%; font: inherit; font-family: var(--font-body); font-size: 0.95rem;
   padding: 11px 13px; background: #fff; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink);
