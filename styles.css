@@ -98,8 +98,8 @@
 
   /* Severidad — el mismo lenguaje que usa un informe de pentest real */
   --critical: #c81e3a;   --critical-bg: #fbe4e8;
-  --high:     #b5480a;   --high-bg:     #fbe6d8;
-  --medium:   #92720a;   --medium-bg:   #f7edcf;
+  --high:     #a8420a;   --high-bg:     #fbe6d8;
+  --medium:   #7a5f08;   --medium-bg:   #f7edcf;
   --low:      #1d5d8a;   --low-bg:      #dcecf5;
 
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Consolas, monospace;
