@@ -206,6 +206,13 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: 14px 18px; border-bottom: 1px dashed var(--line-strong);
   font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--ink-muted);
 }
+.report-panel__note {
+  margin: 0; padding: 12px 190px 12px 18px; background: var(--paper-dim);
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink);
+}
+@media (max-width: 520px) { .report-panel__note { padding: 30px 18px 12px; } }
 .report-panel__row {
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 11px 18px; font-size: 0.92rem; border-top: 1px solid var(--line);
