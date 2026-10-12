@@ -1,0 +1,81 @@
+/* jaga-shared.css — capa compartida de las cuatro webs Jagā (hub + 3 marcas).
+   Regla: este archivo NO impone la identidad visual. Cada sitio sobrescribe los tokens --jaga-* en su
+   propio styles.css (que se carga DESPUÉS) con SUS colores y SUS fuentes. Lo compartido es el comportamiento:
+   foco visible, skip link, selector de marcas, bloque de contacto, redactor de mensaje, movimiento reducido.
+   Es el mismo archivo, byte a byte, en los cuatro repos (se copia; no se enlaza entre repos). */
+
+:root {
+  /* Tokens que cada marca redefine */
+  --jaga-accent: #ae1800;
+  --jaga-on-accent: #ffffff;
+  --jaga-fg: #201e1d;
+  --jaga-fg-muted: #4a4747;
+  --jaga-bg: #f3f2f2;
+  --jaga-surface: #eae9e9;
+  --jaga-border: rgba(32, 30, 29, 0.35);
+  --jaga-font-ui: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --jaga-font-mono: ui-monospace, "SF Mono", Consolas, monospace;
+  /* Tokens estructurales compartidos */
+  --jaga-space-1: 4px;
+  --jaga-space-2: 8px;
+  --jaga-space-3: 12px;
+  --jaga-space-4: 16px;
+  --jaga-space-6: 24px;
+  --jaga-space-8: 32px;
+  --jaga-radius: 0;
+  --jaga-tap: 44px; /* alto mínimo de elementos tocables */
+}
+
+/* Foco visible y consistente */
+:focus-visible { outline: 2px solid var(--jaga-accent); outline-offset: 3px; }
+
+/* Skip link */
+.jaga-skip {
+  position: absolute; left: var(--jaga-space-4); top: -100px; z-index: 1000;
+  background: var(--jaga-fg); color: var(--jaga-bg); padding: var(--jaga-space-3) var(--jaga-space-4);
+  font-family: var(--jaga-font-ui); text-decoration: none;
+}
+.jaga-skip:focus { top: var(--jaga-space-4); }
+
+/* Selector de marcas */
+.jaga-switcher ul { display: flex; flex-wrap: wrap; gap: var(--jaga-space-2) var(--jaga-space-6); list-style: none; margin: 0; padding: 0; }
+.jaga-switcher a { color: inherit; text-decoration: none; padding: var(--jaga-space-2) 0; display: inline-block; min-height: var(--jaga-tap); line-height: calc(var(--jaga-tap) - 16px); border-bottom: 2px solid transparent; }
+.jaga-switcher a:hover { border-bottom-color: currentColor; }
+.jaga-switcher a[aria-current="page"] { font-weight: 700; border-bottom-color: var(--jaga-accent); }
+
+/* Botones */
+.jaga-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--jaga-space-2);
+  min-height: var(--jaga-tap); padding: 0 var(--jaga-space-6);
+  font-family: var(--jaga-font-ui); font-weight: 600; text-decoration: none;
+  color: var(--jaga-fg); background: transparent; border: 1px solid var(--jaga-border); border-radius: var(--jaga-radius);
+}
+.jaga-btn:hover { border-color: var(--jaga-accent); }
+.jaga-btn--primary { color: var(--jaga-on-accent); background: var(--jaga-accent); border-color: var(--jaga-accent); }
+
+/* Contacto */
+.jaga-contact { font-style: normal; display: flex; flex-wrap: wrap; align-items: center; gap: var(--jaga-space-3) var(--jaga-space-4); }
+.jaga-contact__tel, .jaga-contact__meta { color: inherit; }
+
+/* Redactor de mensaje */
+.jaga-composer { display: grid; gap: var(--jaga-space-4); max-width: 560px; }
+.jaga-field { display: grid; gap: var(--jaga-space-2); }
+.jaga-field label { font-family: var(--jaga-font-mono); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.jaga-field input, .jaga-field select, .jaga-field textarea {
+  font: inherit; color: var(--jaga-fg); background: var(--jaga-surface);
+  border: 1px solid var(--jaga-border); border-radius: var(--jaga-radius); padding: var(--jaga-space-3) var(--jaga-space-4); min-height: var(--jaga-tap);
+}
+.jaga-hint { font-size: 0.875rem; color: var(--jaga-fg-muted); margin: 0; }
+.jaga-actions { display: flex; flex-wrap: wrap; gap: var(--jaga-space-3); margin: 0; }
+
+.jaga-visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Movimiento reducido: apaga animaciones y transiciones de TODO el sitio (también las inline) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

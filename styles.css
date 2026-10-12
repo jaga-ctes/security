@@ -109,6 +109,19 @@
   --space-6: 24px; --space-8: 32px;
 }
 
+/* Tokens de la capa compartida (jaga-shared.css) con la identidad de Security */
+:root {
+  --jaga-accent: var(--ink);
+  --jaga-on-accent: var(--paper);
+  --jaga-fg: var(--ink);
+  --jaga-fg-muted: var(--ink-muted);
+  --jaga-bg: var(--paper);
+  --jaga-surface: var(--paper-dim);
+  --jaga-border: var(--line-strong);
+  --jaga-font-ui: var(--font-mono);
+  --jaga-font-mono: var(--font-mono);
+}
+
 * , *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
