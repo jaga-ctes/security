@@ -267,13 +267,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ============================================================
-   Formulario de contacto
+   Formulario de contacto (redactor de mensaje)
    ============================================================ */
 .field { display: flex; flex-direction: column; gap: 6px; }
-.field label { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); }
-.input, select.input, textarea.input {
+.field label, .jaga-field label { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-muted); }
+.input, input.input, select.input, textarea.input {
   width: 100%; font: inherit; font-family: var(--font-body); font-size: 0.95rem;
   padding: 11px 13px; background: #fff; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink);
 }
 .input:focus-visible { outline-offset: 0; border-color: var(--ink); }
 textarea.input { resize: vertical; min-height: 100px; }
+.jaga-contact__meta { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-muted); }
