@@ -29,6 +29,7 @@
 
 <link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
+<link rel="stylesheet" href="jaga-shared.css">
 <link rel="stylesheet" href="styles.css">
 
 <!-- JSON-LD: LocalBusiness -->
@@ -38,8 +39,7 @@
   "@type": "ProfessionalService",
   "name": "Jagā Security",
   "url": "https://security.jagasoluciones.com/",
-  "telephone": "+5493794870266",
-  "email": "jaga.corrientes@gmail.com",
+  "email": "contacto@jagasoluciones.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Corrientes",
@@ -286,37 +286,42 @@
         <p class="exhibit">ANEXO <b>D</b> — CONTACTO</p>
         <h2 style="font-size:clamp(1.6rem,3vw,2.2rem); margin:0 0 20px;">Solicitá tu evaluación de seguridad</h2>
         <p style="font-size:0.98rem; line-height:1.7; color:var(--ink-muted); margin:0 0 26px; max-width:420px;">Contanos qué querés evaluar y coordinamos los próximos pasos. Todo bajo confidencialidad.</p>
-        <div style="display:flex; flex-direction:column; gap:12px; font-family:var(--font-mono); font-size:0.92rem;">
-          <a href="https://wa.me/5493794870266" target="_blank" rel="noopener" style="text-decoration:none; color:var(--ink);">WHATSAPP: +54 9 379 487-0266</a>
-          <a href="mailto:jaga.corrientes@gmail.com" style="text-decoration:none; color:var(--ink);">MAIL: jaga.corrientes@gmail.com</a>
-        </div>
+        <address class="jaga-contact" data-jaga-contact>
+          <a class="jaga-btn jaga-btn--primary" href="https://wa.me/5493794870266?text=Hola%2C%20quiero%20consultar%20por%20un%20pentest" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+          <a class="jaga-btn" href="mailto:contacto@jagasoluciones.com">contacto@jagasoluciones.com</a>
+          <span class="jaga-contact__meta">Corrientes Capital</span>
+        </address>
         <p style="font-size:0.8rem; color:var(--ink-muted); margin:26px 0 0; padding-top:18px; border-top:1px dashed var(--line-strong);">Toda evaluación se realiza bajo acuerdo de confidencialidad y alcance definido por escrito.</p>
       </div>
 
-      <form action="mailto:jaga.corrientes@gmail.com" method="post" enctype="text/plain" style="display:flex; flex-direction:column; gap:18px;">
-        <div class="field">
-          <label for="f-nombre">Nombre / Empresa</label>
-          <input class="input" id="f-nombre" type="text" name="Nombre" required>
+      <div class="jaga-composer" data-jaga-composer data-wa="5493794870266" data-mail="contacto@jagasoluciones.com" data-brand="Security">
+        <div class="jaga-field">
+          <label for="c-nombre">Nombre / Empresa</label>
+          <input class="input" id="c-nombre" type="text" maxlength="80" autocomplete="organization" data-f-name>
         </div>
-        <div class="field">
-          <label for="f-email">Email</label>
-          <input class="input" id="f-email" type="email" name="Email" required>
-        </div>
-        <div class="field">
-          <label for="f-tipo">Tipo de proyecto</label>
-          <select class="input" id="f-tipo" name="Tipo de proyecto">
+        <div class="jaga-field">
+          <label for="c-tipo">Tipo de proyecto</label>
+          <select class="input" id="c-tipo" data-f-type>
+            <option value="">Elegí una opción</option>
             <option>Aplicación web</option>
             <option>API</option>
+            <option>Aplicación Android</option>
             <option>Infraestructura / red</option>
+            <option>Nube</option>
             <option>No estoy seguro</option>
           </select>
         </div>
-        <div class="field">
-          <label for="f-mensaje">Alcance / mensaje</label>
-          <textarea class="input" id="f-mensaje" name="Mensaje" required rows="4"></textarea>
+        <div class="jaga-field">
+          <label for="c-msg">Alcance / mensaje</label>
+          <textarea class="input" id="c-msg" rows="4" maxlength="600" data-f-msg></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">ENVIAR CONSULTA</button>
-      </form>
+        <p class="jaga-hint">Se abre WhatsApp o tu app de correo con el mensaje listo; no enviamos nada hasta que vos lo mandes.
+          No incluyas contraseñas, claves ni datos sensibles: el alcance se define por escrito más adelante.</p>
+        <p class="jaga-actions">
+          <a class="jaga-btn jaga-btn--primary" data-send-wa href="https://wa.me/5493794870266" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <a class="jaga-btn" data-send-mail href="mailto:contacto@jagasoluciones.com">Enviar por mail</a>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -351,5 +356,6 @@
 </main>
 
 <script src="script.js"></script>
+<script src="composer.js" defer></script>
 </body>
 </html>
