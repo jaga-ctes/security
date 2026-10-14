@@ -279,3 +279,32 @@ ul { margin: 0; padding: 0; list-style: none; }
 .input:focus-visible { outline-offset: 0; border-color: var(--ink); }
 textarea.input { resize: vertical; min-height: 100px; }
 .jaga-contact__meta { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-muted); }
+
+/* ============================================================
+   Pie: enlace al hub y flecha flotante "Volver arriba"
+   ============================================================ */
+a.back-home {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px;
+  font-family: var(--font-mono); font-size: 0.82rem; font-weight: 600; text-decoration: none; color: var(--ink);
+}
+a.back-home:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* Aire bajo el pie para que la flecha nunca tape sus enlaces al final de la página
+   (el pie fija su padding inline, por eso va como margen) */
+footer { margin-bottom: calc(48px + env(safe-area-inset-bottom, 0px)); }
+
+/* Oculta (y fuera del orden de Tab) hasta que script.js le pone .is-visible */
+.to-top {
+  position: fixed; z-index: 40;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 48px;
+  color: var(--paper); background: var(--ink); border-radius: 2px; box-shadow: 4px 4px 0 var(--line-strong);
+  visibility: hidden; opacity: 0;
+}
+.to-top.is-visible { visibility: visible; opacity: 1; }
+a.to-top:hover { color: var(--paper); background: #000; }
+.to-top svg { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .to-top { transition: opacity 0.2s ease, visibility 0s linear 0.2s; }
+  .to-top.is-visible { transition: opacity 0.2s ease, visibility 0s; }
+}

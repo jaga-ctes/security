@@ -36,7 +36,7 @@
 <link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="jaga-shared.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261014">
 
 <!-- JSON-LD: LocalBusiness -->
 <script type="application/ld+json">
@@ -68,7 +68,7 @@
 
 <header style="position:sticky; top:0; z-index:50; background:var(--paper); border-bottom:1px solid var(--line-strong);">
   <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px clamp(20px,5vw,32px);">
-    <a href="#inicio" aria-label="Jagā Security — inicio" style="display:flex; align-items:center;">
+    <a id="arriba" href="#inicio" aria-label="Jagā Security — inicio" style="display:flex; align-items:center;">
       <img src="img/jaga-security-logo.png" width="210" height="84" alt="Jagā Security" style="height:42px; width:auto;">
     </a>
 
@@ -344,6 +344,7 @@
           <img src="img/jaga-security-logo.png" width="210" height="84" alt="Jagā Security" loading="lazy" decoding="async" style="height:36px; width:auto;">
         </a>
         <p style="font-size:0.85rem; color:var(--ink-muted); margin:14px 0 0;">Seguridad ofensiva para empresas en Corrientes.</p>
+        <a class="back-home" href="https://jagasoluciones.com/" aria-label="Volver al inicio de jagasoluciones.com"><span aria-hidden="true">←</span> Volver al inicio</a>
       </div>
       <nav style="display:flex; flex-direction:column; gap:8px; font-family:var(--font-mono); font-size:0.82rem;">
         <a href="#servicios" style="text-decoration:none; color:var(--ink);">SERVICIOS</a>
@@ -366,8 +367,11 @@
     </div>
   </footer>
 
+  <a class="to-top" id="volver-arriba" href="#arriba" aria-label="Volver arriba">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20V5M5 11.5L12 4.5l7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"></path></svg>
+  </a>
 
-<script src="script.js"></script>
+<script src="script.js?v=20261014"></script>
 <script src="composer.js" defer></script>
 </body>
 </html>
